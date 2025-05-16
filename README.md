@@ -1,98 +1,52 @@
-🚗 Vehicle Rental Form — Full Stack Project
+Vehicle Rental Form – Full Stack Test Project
 
-This is my submission for the Octalogic Tech Full Stack Test 2024.
-It’s a full stack vehicle rental form app with booking validation and date conflict prevention.
-🛠️ Tech Stack
+Tech Used
 
-    Frontend: React.js, Material UI, Axios
-
+    Frontend: React.js, Material UI
     Backend: Node.js, Express.js, Sequelize ORM
+    Database: SQLite (local file)
 
-    Database: SQLite (local file database)
+How to Run the Project 
 
-    Date Handling: @mui/x-date-pickers, date-fns
+Backend
 
-🚀 How to Run
-🔧 Backend
+1. Open terminal → go to the backend folder:
 
-    Navigate to the backend folder:
+	cd backend
 
-cd backend
+2. Install backend dependencies:
 
-    Install backend dependencies:
+	npm install
 
-npm install
+3. Start the backend server:
 
-    Start the backend server:
+    npx nodemon index.js
 
-npx nodemon index.js
-
-    The server will run on:
+4. Make sure the server is running at:
     http://localhost:3001
 
-👉 The SQLite database file database.sqlite is located inside the backend folder and preloaded with sample data.
-💻 Frontend
+Note: A file named database.sqlite is already included in the backend folder and preloaded with sample data.
 
-    Navigate to the frontend folder:
+Frontend
 
-cd frontend
+1. Open another terminal → go to the frontend folder:
 
-    Install frontend dependencies:
+	cd frontend
 
-npm install
+2. Install frontend dependencies:
 
-    Start the frontend app:
+	npm install
 
-npm start
+3. Start the frontend:
 
-    The frontend runs on:
+    npm start
+
+4. The app will open in the browser at:
     http://localhost:3000
 
-📡 API Endpoints
-Method	Endpoint	Purpose
-GET	/vehicle-types?wheels=2	Get vehicle types by wheel count
-GET	/vehicles?typeId=1	Get vehicle models by type
-POST	/book	Submit a booking request
-POST /book request body example:
+Main Features
 
-{
-  "firstName": "John",
-  "lastName": "Doe",
-  "vehicleId": 3,
-  "startDate": "2025-06-01",
-  "endDate": "2025-06-03"
-}
-
-✅ Features
-
-    Multi-step form with step-by-step validation
-
-    Live API integration for dynamic vehicle types and models
-
-    Date range picker with overlapping booking check
-
-    Confirmation screen on successful booking
-
-    Alert if booking conflicts exist
-
-📁 Database
-
-    Uses SQLite and stores data in backend/database.sqlite
-
-    Sequelize models: User, VehicleType, Vehicle, Booking
-
-    Migrations and seeders are preloaded with sample data
-
-🙋‍♂️ Author
-
-Ayush Kulbhusan
-LinkedIn Profile
-📨 Notes
-
-    The app works fully offline with SQLite
-
-    You can run the frontend and backend locally in two terminals
-
-    Let me know if you'd like a walkthrough or demo
-
-Thank you for the opportunity!
+    Multi-step form: name → wheels → vehicle type → model → date range
+    Vehicle type & model are loaded from backend dynamically
+    Backend checks for overlapping bookings
+    Success confirmation screen on booking
